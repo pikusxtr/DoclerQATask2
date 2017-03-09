@@ -1,26 +1,22 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using OpenQA.Selenium.Support.UI;
-using System;
 
 namespace DoclerQaTask
 {
 
     public class DoclerQaBasePage
     {
-        private readonly IWebDriver driver;
-        private readonly By DefaultPageLocator = By.TagName("img");
-        public DoclerQaPageMenu pageMenu { get; }
+        private readonly IWebDriver _driver;
+        public DoclerQaPageMenu PageMenu { get; }
 
         public DoclerQaBasePage(IWebDriver browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
-            pageMenu = new DoclerQaPageMenu(browser);
+            PageMenu = new DoclerQaPageMenu(browser);
 
         }
-
-
 
         [FindsBy(How = How.Id, Using = "dh_logo")]
         public IWebElement Logo { get; set; }
@@ -38,13 +34,12 @@ namespace DoclerQaTask
 
         public String PageTitle()
         {
-            return driver.Title;
+            return _driver.Title;
         }
 
         public String TagText(string tagName)
         {
-            return driver.FindElement(By.TagName(tagName)).Text;
-
+            return _driver.FindElement(By.TagName(tagName)).Text;
         }
 
     }

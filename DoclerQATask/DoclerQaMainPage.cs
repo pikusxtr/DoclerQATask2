@@ -1,40 +1,36 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using System;
 
 namespace DoclerQaTask
 {
 
     public class DoclerQaMainPage : DoclerQaBasePage
     {
-        private readonly IWebDriver driver;
-        private readonly By DefaultPageLocator = By.TagName("img");
+        private readonly IWebDriver _driver;
+        private readonly By _defaultPageLocator = By.TagName("img");
 
 
-        private readonly string url = @"http://uitest.duodecadits.com/";
+        private readonly string _url = @"http://uitest.duodecadits.com/";
         public DoclerQaMainPage(IWebDriver browser) : base(browser)
         {
-            driver = browser;
+            _driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public void Open()
         {
-            driver.Navigate().GoToUrl(url);
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            Func<IWebDriver, bool> waitForElement = new Func<IWebDriver, bool>((IWebDriver Web) =>
-            {
-                return Web.FindElement(DefaultPageLocator).Displayed;
-
-            });
+            _driver.Navigate().GoToUrl(_url);
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+            Func<IWebDriver, bool> waitForElement = web => web.FindElement(_defaultPageLocator).Displayed;
             wait.Until(waitForElement);
         }
 
         public DoclerQaFormPage NavigateToForm()
         {
-            pageMenu.FormButton.Click();
-            return new DoclerQaFormPage(driver);
+            PageMenu.FormButton.Click();
+            return new DoclerQaFormPage(_driver);
         }
 
         public String PTagText()

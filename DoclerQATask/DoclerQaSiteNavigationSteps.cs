@@ -1,10 +1,7 @@
-﻿using NUnit.Framework;
+﻿using System.Net;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.IO;
-using System.Net;
-using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace DoclerQaTask
@@ -13,28 +10,28 @@ namespace DoclerQaTask
 
     public sealed class DoclerQaSiteNavigationSteps
     {
-        static IWebDriver driver;
-        static DoclerQaMainPage mainPage;
-        static DoclerQaPageMenu pageMenu;
-        static DoclerQaFormPage formPage;
-        static DoclerQaHelloPage helloPage;
-        static DoclerQaBasePage basePage;
+        static IWebDriver _driver;
+        static DoclerQaMainPage _mainPage;
+        static DoclerQaPageMenu _pageMenu;
+        static DoclerQaFormPage _formPage;
+        static DoclerQaHelloPage _helloPage;
+        static DoclerQaBasePage _basePage;
 
-        string homePageText = "Welcome to the Docler Holding QA Department";
-        string formPageText = "Simple Form Submission";
-        string errorPageUrl = "http://uitest.duodecadits.com/error";
-        int actualStatusCode;
+        string _homePageText = "Welcome to the Docler Holding QA Department";
+        string _formPageText = "Simple Form Submission";
+        string _errorPageUrl = "http://uitest.duodecadits.com/error";
+        int _actualStatusCode;
 
 
         [BeforeFeature]
         public static void Before()
         {
-            driver = new ChromeDriver("C:\\bins");
-            mainPage = new DoclerQaMainPage(driver);
-            pageMenu = new DoclerQaPageMenu(driver);
-            formPage = new DoclerQaFormPage(driver);
-            helloPage = new DoclerQaHelloPage(driver);
-            basePage = new DoclerQaBasePage(driver);
+            _driver = new ChromeDriver("C:\\bins");
+            _mainPage = new DoclerQaMainPage(_driver);
+            _pageMenu = new DoclerQaPageMenu(_driver);
+            _formPage = new DoclerQaFormPage(_driver);
+            _helloPage = new DoclerQaHelloPage(_driver);
+            _basePage = new DoclerQaBasePage(_driver);
         }
 
 
@@ -44,7 +41,7 @@ namespace DoclerQaTask
         [When(@"I open Main page")]
         public void WhenIOpenMainPage()
         {
-            mainPage.Open();
+            _mainPage.Open();
         }
 
 
@@ -52,129 +49,129 @@ namespace DoclerQaTask
         [When(@"I open Form page")]
         public void WhenIOpenFormPage()
         {
-            formPage.Open();
+            _formPage.Open();
         }
 
         [Then(@"Page title is equal to ""(.*)""")]
         public void ThenPageTitleIsEqualTo(string pageTitle)
         {
-            Assert.AreEqual(pageTitle, mainPage.PageTitle());
+            Assert.AreEqual(pageTitle, _mainPage.PageTitle());
         }
 
         [When(@"I click Form button")]
         public void WhenIClickFormButton()
         {
-            pageMenu.FormButton.Click();
+            _pageMenu.FormButton.Click();
         }
 
         [When(@"I click Home button")]
         public void WhenIClickHomeButton()
         {
-            pageMenu.HomeButton.Click();
+            _pageMenu.HomeButton.Click();
         }
 
         [When(@"I click UITesting button")]
-        public void WhenIClickUITestingButton()
+        public void WhenIClickUiTestingButton()
         {
-            pageMenu.UITestingButton.Click();
+            _pageMenu.UiTestingButton.Click();
         }
 
 
         [When(@"I click Error button")]
         public void WhenIClickErrorButton()
         {
-            pageMenu.ErrorButton.Click();
+            _pageMenu.ErrorButton.Click();
         }
 
         [Then(@"Text in ""(.*)"" tag is equal to ""(.*)""")]
         public void ThenTextInTagIsEqualTo(string tagName, string tagText)
         {
-            Assert.AreEqual(tagText, mainPage.TagText(tagName));
+            Assert.AreEqual(tagText, _mainPage.TagText(tagName));
         }
 
         [Then(@"Home Page is displayed")]
         public void ThenHomePageIsDisplayed()
         {
-            Assert.AreEqual(homePageText, mainPage.TagText("h1"));
+            Assert.AreEqual(_homePageText, _mainPage.TagText("h1"));
         }
 
         [Then(@"Form Page is displayed")]
         public void ThenFormPageIsDisplayed()
         {
-            Assert.AreEqual(formPageText, formPage.TagText("h1"));
+            Assert.AreEqual(_formPageText, _formPage.TagText("h1"));
         }
 
 
         [Then(@"Hello Page is displayed")]
         public void ThenHelloPageIsDisplayed()
         {
-            Assert.True(helloPage.IsOnHelloPage());
+            Assert.True(_helloPage.IsOnHelloPage());
         }
 
         [Then(@"(.*) ""(.*)"" of type ""(.*)"" element is displayed")]
         public void ThenOfTypeElementIsDisplayed(int elemCount, string tagName, string typeAttribute)
         {
-            Assert.True(formPage.elementsCount(tagName, typeAttribute).Equals(elemCount));
+            Assert.True(_formPage.ElementsCount(tagName, typeAttribute).Equals(elemCount));
         }
 
         [Then(@"Home button is active")]
         public void ThenHomeButtonIsActive()
         {
-            Assert.True(pageMenu.IsMenuButtonActive(pageMenu.HomeButton));
+            Assert.True(_pageMenu.IsMenuButtonActive(_pageMenu.HomeButton));
         }
 
         [Then(@"Form button is active")]
         public void ThenFormButtonIsActive()
         {
-            Assert.True(pageMenu.IsMenuButtonActive(pageMenu.FormButton));
+            Assert.True(_pageMenu.IsMenuButtonActive(_pageMenu.FormButton));
         }
 
         [When(@"I submit (.*)")]
         public void WhenISubmit(string textToSubmit)
         {
-            formPage.SetInputText(textToSubmit);
-            formPage.SubmitForm();
+            _formPage.SetInputText(textToSubmit);
+            _formPage.SubmitForm();
         }
 
         [Then(@"(.*) text is displayed")]
         public void ThenTextIsDisplayed(string resultText)
         {
-            Assert.AreEqual(resultText, helloPage.TagText("h1"));
+            Assert.AreEqual(resultText, _helloPage.TagText("h1"));
         }
 
         [Then(@"Logo image is displayed")]
         public void ThenLogoImageIsDisplayed()
         {
-            Assert.True(basePage.IsLogoVisible());
+            Assert.True(_basePage.IsLogoVisible());
         }
 
         [When(@"I send GET request for Error Page")]
-        public void WhenISendGETRequestForErrorPage()
+        public void WhenISendGetRequestForErrorPage()
         {
-            HttpWebResponse taskresponse = null;
-            var task = (HttpWebRequest)WebRequest.Create(errorPageUrl);
+            var task = (HttpWebRequest)WebRequest.Create(_errorPageUrl);
             try
             {
-                taskresponse = (HttpWebResponse)task.GetResponse();
+               task.GetResponse();
+                // var httpWebResponse = (HttpWebResponse)
             }
             catch (WebException e)
             {
                 var response = e.Response as HttpWebResponse;
-                actualStatusCode = (int)response.StatusCode;
+                if (response != null) _actualStatusCode = (int)response.StatusCode;
             }
         }
 
         [Then(@"HTTP Response status code is equal to (.*)")]
-        public void ThenHTTPResponseStatusCodeIsEqualTo(int statusCode)
+        public void ThenHttpResponseStatusCodeIsEqualTo(int statusCode)
         {
-            Assert.AreEqual(statusCode, actualStatusCode);
+            Assert.AreEqual(statusCode, _actualStatusCode);
         }
 
 
         [AfterFeature]
         public static void After()
         {
-            driver.Quit();
+            _driver.Quit();
         }
 
     }

@@ -1,28 +1,18 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace DoclerQaTask
 {
 
     public class DoclerQaPageMenu
     {
-        private readonly IWebDriver driver;
-
         public DoclerQaPageMenu(IWebDriver browser)
         {
-            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         [FindsBy(How = How.Id, Using = "site")]
-        public IWebElement UITestingButton { get; set; }
+        public IWebElement UiTestingButton { get; set; }
 
         [FindsBy(How = How.Id, Using = "home")]
         public IWebElement HomeButton { get; set; }
