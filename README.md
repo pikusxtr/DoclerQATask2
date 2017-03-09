@@ -1,5 +1,5 @@
-Tests should be executed from Visual Studio 2017
-Download Chromedriver 2.27 and copy chromedriver.exe to C:\bins
+Tests should be executed from Visual Studio 2017<br>
+Download Chromedriver 2.27 and copy chromedriver.exe to C:\bins  
 Install then following extensions:
 -SpecFlow for Visual Studio 2017
 -NUnit 3 test adapter
