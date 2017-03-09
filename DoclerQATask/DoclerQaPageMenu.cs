@@ -17,7 +17,7 @@ namespace DoclerQaTask
 
         public DoclerQaPageMenu(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 

@@ -15,7 +15,7 @@ namespace DoclerQaTask
 
         public DoclerQaFormPage(IWebDriver browser) : base(browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
@@ -27,8 +27,8 @@ namespace DoclerQaTask
 
         public void Open()
         {
-            this.driver.Navigate().GoToUrl(this.url);
-            WebDriverWait wait = new WebDriverWait(this.driver, TimeSpan.FromSeconds(5));
+            driver.Navigate().GoToUrl(url);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             Func<IWebDriver, bool> waitForElement = new Func<IWebDriver, bool>((IWebDriver Web) =>
             {
                 return Web.FindElement(DefaultPageLocator).Displayed;
@@ -40,21 +40,21 @@ namespace DoclerQaTask
 
         public void SetInputText(string inputText)
         {
-            this.TextInput.SendKeys(inputText);
+            TextInput.SendKeys(inputText);
         }
         public void NavigateToHome()
         {
-            this.pageMenu.HomeButton.Click();
+            pageMenu.HomeButton.Click();
         }
 
         public int elementsCount(string tagName, string type)
         {
-            return this.driver.FindElements(By.CssSelector(tagName + "[type=" + type + "]")).Count;
+            return driver.FindElements(By.CssSelector(tagName + "[type=" + type + "]")).Count;
         }
 
         public void SubmitForm()
         {
-            this.SubmitButton.Click();
+            SubmitButton.Click();
         }
 
     }

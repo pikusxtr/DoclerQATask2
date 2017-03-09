@@ -14,7 +14,7 @@ namespace DoclerQaTask
 
         public DoclerQaBasePage(IWebDriver browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
             pageMenu = new DoclerQaPageMenu(browser);
 
@@ -33,17 +33,17 @@ namespace DoclerQaTask
 
         public bool IsLogoVisible()
         {
-            return this.Logo.Displayed;
+            return Logo.Displayed;
         }
 
         public String PageTitle()
         {
-            return this.driver.Title;
+            return driver.Title;
         }
 
         public String TagText(string tagName)
         {
-            return this.driver.FindElement(By.TagName(tagName)).Text;
+            return driver.FindElement(By.TagName(tagName)).Text;
 
         }
 

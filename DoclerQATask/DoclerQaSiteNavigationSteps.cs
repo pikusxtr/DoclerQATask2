@@ -152,13 +152,12 @@ namespace DoclerQaTask
         public void WhenISendGETRequestForErrorPage()
         {
             HttpWebResponse taskresponse = null;
-            HttpWebRequest task;
-            task = (HttpWebRequest)WebRequest.Create(errorPageUrl);
+            var task = (HttpWebRequest)WebRequest.Create(errorPageUrl);
             try
             {
                 taskresponse = (HttpWebResponse)task.GetResponse();
             }
-            catch (System.Net.WebException e)
+            catch (WebException e)
             {
                 var response = e.Response as HttpWebResponse;
                 actualStatusCode = (int)response.StatusCode;

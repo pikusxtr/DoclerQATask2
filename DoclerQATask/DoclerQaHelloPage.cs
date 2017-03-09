@@ -12,13 +12,13 @@ namespace DoclerQaTask
 
         public DoclerQaHelloPage(IWebDriver browser) : base(browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public bool IsOnHelloPage()
         {
-            return this.driver.Url.Contains("/hello.html");
+            return driver.Url.Contains("/hello.html");
         }
     }
 }

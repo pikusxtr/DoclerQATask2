@@ -15,14 +15,14 @@ namespace DoclerQaTask
         private readonly string url = @"http://uitest.duodecadits.com/";
         public DoclerQaMainPage(IWebDriver browser) : base(browser)
         {
-            this.driver = browser;
+            driver = browser;
             PageFactory.InitElements(browser, this);
         }
 
         public void Open()
         {
-            this.driver.Navigate().GoToUrl(this.url);
-            WebDriverWait wait = new WebDriverWait(this.driver, TimeSpan.FromSeconds(5));
+            driver.Navigate().GoToUrl(url);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             Func<IWebDriver, bool> waitForElement = new Func<IWebDriver, bool>((IWebDriver Web) =>
             {
                 return Web.FindElement(DefaultPageLocator).Displayed;
@@ -33,13 +33,13 @@ namespace DoclerQaTask
 
         public DoclerQaFormPage NavigateToForm()
         {
-            this.pageMenu.FormButton.Click();
-            return new DoclerQaFormPage(this.driver);
+            pageMenu.FormButton.Click();
+            return new DoclerQaFormPage(driver);
         }
 
         public String PTagText()
         {
-            return this.PTag.Text;
+            return PTag.Text;
         }
 
     }
