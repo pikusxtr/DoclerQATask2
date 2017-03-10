@@ -14,5 +14,7 @@ Install all packages displayed in Updates tab, especially:<br>
 -NUnit<br>
 <br>
 From main menu select Build -> Build Solution<br>
+From main menu select Test -> Run -> All Tests<br>
+Test Explorer window will open, wait until all tests are executed<br>
 From Solution Explorer select DoclerQaSiteNavigation.feature file, right click,<br>
 Select Run SpecFlow Scenarios from context menu.<br>
