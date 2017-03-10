@@ -9,8 +9,7 @@ Scenario: Verify page title on Form Page
 	When I click Form button
 	Then Page title is equal to "UI Testing Site"
 
-
-Scenario: Verify h1, p html tags content on Home Page
+Scenario: Verify "h1", "p" html tags content on Home Page
 	When I open Main page
 	Then Text in "h1" tag is equal to "Welcome to the Docler Holding QA Department"
 	And Text in "p" tag is equal to "This site is dedicated to perform some exercises and demonstrate automated web testing."
@@ -29,9 +28,8 @@ Scenario: Verify Form button navigation
 	Given I open Main page
 	When I click Form button
 	Then Form Page is displayed
-#
 
-Scenario: Verify Form page content
+Scenario: Verify Form page content: number of buttons and input elements
 	When I open Form page
 	Then 1 "input" of type "text" element is displayed
 	And 1 "button" of type "submit" element is displayed

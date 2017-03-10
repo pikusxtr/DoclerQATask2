@@ -1,4 +1,7 @@
-﻿using System.Net;
+﻿using System;
+using System.IO;
+using System.Net;
+using System.Reflection;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -26,7 +29,7 @@ namespace DoclerQaTask
         [BeforeFeature]
         public static void Before()
         {
-            _driver = new ChromeDriver("C:\\bins");
+            _driver = new ChromeDriver("C:\\bins");            
             _mainPage = new DoclerQaMainPage(_driver);
             _pageMenu = new DoclerQaPageMenu(_driver);
             _formPage = new DoclerQaFormPage(_driver);
@@ -35,15 +38,12 @@ namespace DoclerQaTask
         }
 
 
-
-
         [Given(@"I open Main page")]
         [When(@"I open Main page")]
         public void WhenIOpenMainPage()
         {
             _mainPage.Open();
         }
-
 
         [Given(@"I open Form page")]
         [When(@"I open Form page")]
@@ -76,7 +76,6 @@ namespace DoclerQaTask
             _pageMenu.UiTestingButton.Click();
         }
 
-
         [When(@"I click Error button")]
         public void WhenIClickErrorButton()
         {
@@ -100,7 +99,6 @@ namespace DoclerQaTask
         {
             Assert.AreEqual(_formPageText, _formPage.TagText("h1"));
         }
-
 
         [Then(@"Hello Page is displayed")]
         public void ThenHelloPageIsDisplayed()
@@ -152,7 +150,6 @@ namespace DoclerQaTask
             try
             {
                task.GetResponse();
-                // var httpWebResponse = (HttpWebResponse)
             }
             catch (WebException e)
             {
@@ -166,7 +163,7 @@ namespace DoclerQaTask
         {
             Assert.AreEqual(statusCode, _actualStatusCode);
         }
-
+    
 
         [AfterFeature]
         public static void After()

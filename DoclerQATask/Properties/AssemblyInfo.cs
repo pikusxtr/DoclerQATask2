@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("DoclerQATask")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Oracle Corporation")]
+[assembly: AssemblyCompany("DoclerQATask")]
 [assembly: AssemblyProduct("DoclerQATask")]
-[assembly: AssemblyCopyright("Copyright © Oracle Corporation 2017")]
+[assembly: AssemblyCopyright("Copyright © kpiekos 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

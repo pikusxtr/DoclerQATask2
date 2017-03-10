@@ -9,12 +9,12 @@
 //  </auto-generated>
 // ------------------------------------------------------------------------------
 #region Designer generated code
-
-using TechTalk.SpecFlow;
-
 #pragma warning disable
 namespace DoclerQATask
 {
+    using TechTalk.SpecFlow;
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
@@ -96,17 +96,17 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify h1, p html tags content on Home Page")]
+        [NUnit.Framework.DescriptionAttribute("Verify \"h1\", \"p\" html tags content on Home Page")]
         public virtual void VerifyH1PHtmlTagsContentOnHomePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify h1, p html tags content on Home Page", ((string[])(null)));
-#line 13
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify \"h1\", \"p\" html tags content on Home Page", ((string[])(null)));
+#line 12
 this.ScenarioSetup(scenarioInfo);
-#line 14
+#line 13
  testRunner.When("I open Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 14
  testRunner.Then("Text in \"h1\" tag is equal to \"Welcome to the Docler Holding QA Department\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 16
+#line 15
  testRunner.And("Text in \"p\" tag is equal to \"This site is dedicated to perform some exercises and" +
                     " demonstrate automated web testing.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -118,13 +118,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyHomeButtonNavigation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Home button navigation", ((string[])(null)));
-#line 18
+#line 17
 this.ScenarioSetup(scenarioInfo);
-#line 19
+#line 18
  testRunner.Given("I open Form page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
+#line 19
  testRunner.When("I click Home button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 20
  testRunner.Then("Home Page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -135,13 +135,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyUITestingButtonNavigation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify UITesting button navigation", ((string[])(null)));
-#line 23
+#line 22
 this.ScenarioSetup(scenarioInfo);
-#line 24
+#line 23
  testRunner.Given("I open Form page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 25
+#line 24
  testRunner.When("I click UITesting button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
+#line 25
  testRunner.Then("Home Page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -152,30 +152,30 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyFormButtonNavigation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Form button navigation", ((string[])(null)));
-#line 28
+#line 27
 this.ScenarioSetup(scenarioInfo);
-#line 29
+#line 28
  testRunner.Given("I open Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 30
+#line 29
  testRunner.When("I click Form button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 30
  testRunner.Then("Form Page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Form page content")]
-        public virtual void VerifyFormPageContent()
+        [NUnit.Framework.DescriptionAttribute("Verify Form page content: number of buttons and input elements")]
+        public virtual void VerifyFormPageContentNumberOfButtonsAndInputElements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Form page content", ((string[])(null)));
-#line 34
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Form page content: number of buttons and input elements", ((string[])(null)));
+#line 32
 this.ScenarioSetup(scenarioInfo);
-#line 35
+#line 33
  testRunner.When("I open Form page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 34
  testRunner.Then("1 \"input\" of type \"text\" element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 37
+#line 35
  testRunner.And("1 \"button\" of type \"submit\" element is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -186,13 +186,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyHomeButtonIsActiveOnHomePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Home button is active on Home Page", ((string[])(null)));
-#line 39
+#line 37
 this.ScenarioSetup(scenarioInfo);
-#line 40
+#line 38
  testRunner.Given("I open Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
+#line 39
  testRunner.When("I click Home button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
+#line 40
  testRunner.Then("Home button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -203,13 +203,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyFormButtonIsActiveOnFormPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Form button is active on Form Page", ((string[])(null)));
-#line 44
+#line 42
 this.ScenarioSetup(scenarioInfo);
-#line 45
+#line 43
  testRunner.Given("I open Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 46
+#line 44
  testRunner.When("I click Form button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
+#line 45
  testRunner.Then("Form button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -220,11 +220,11 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyLogoImageIsDisplayedOnHomePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify logo image is displayed on Home Page", ((string[])(null)));
-#line 49
+#line 47
 this.ScenarioSetup(scenarioInfo);
-#line 50
+#line 48
  testRunner.When("I open Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 51
+#line 49
  testRunner.Then("Logo image is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -235,13 +235,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyLogoImageIsDisplayedOnFormPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify logo image is displayed on Form Page", ((string[])(null)));
-#line 53
+#line 51
 this.ScenarioSetup(scenarioInfo);
-#line 54
+#line 52
  testRunner.Given("I open Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 55
+#line 53
  testRunner.When("I click Form button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
+#line 54
  testRunner.Then("Logo image is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -252,11 +252,11 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyErrorPageResponseStatusCode()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Error page response status code", ((string[])(null)));
-#line 58
+#line 56
 this.ScenarioSetup(scenarioInfo);
-#line 59
+#line 57
  testRunner.When("I send GET request for Error Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 60
+#line 58
  testRunner.Then("HTTP Response status code is equal to 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -271,15 +271,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void VerifyTextSubmittedOnTheFormPage(string text_Input, string result, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify text submitted on the Form Page", exampleTags);
-#line 62
+#line 60
 this.ScenarioSetup(scenarioInfo);
-#line 63
+#line 61
  testRunner.Given("I open Form page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 64
+#line 62
  testRunner.When(string.Format("I submit {0}", text_Input), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 63
  testRunner.Then("Hello Page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 66
+#line 64
  testRunner.And(string.Format("{0} text is displayed", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
