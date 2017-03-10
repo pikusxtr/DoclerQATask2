@@ -1,4 +1,5 @@
 Software installed:<br>
+-Windows 10<br>
 -Visual Studio 2017 for C# development<br>
 -Chrome browser<br>
 Tests should be executed from Visual Studio 2017<br>
@@ -20,4 +21,4 @@ Install all packages displayed in Updates tab, especially:<br>
 From main menu select Build -> Build Solution<br>
 From main menu select Test -> Run -> All Tests<br>
 Test Explorer window will open, wait until all tests are executed<br>
-Check tests results in Test Explorer window
+Check tests results in Test Explorer window<br>
