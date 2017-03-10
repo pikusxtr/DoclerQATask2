@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Reflection;
+﻿using System.Net;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
